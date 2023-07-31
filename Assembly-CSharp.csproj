@@ -38,6 +38,7 @@
   <ItemGroup>
      <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
      <Compile Include="Assets\Scriptss\Player\FlashLight\FlashLight.cs" />
+     <Compile Include="Assets\Scriptss\Player\Movement\RuuningEffect.cs" />
      <Compile Include="Assets\Scriptss\Player\Movement\Player.cs" />
      <Compile Include="Assets\Scriptss\Player\PlayerUI\Scirpts\Manager\PlayerUIManager.cs" />
      <Compile Include="Assets\Scriptss\Player\Interaction\V2\IRotator.cs" />
@@ -56,7 +57,9 @@
      <Compile Include="Assets\Scriptss\Player\Interaction\Interactor.cs" />
      <Compile Include="Assets\Scriptss\EditorDrawer\EditorDrawer.cs" />
      <Compile Include="Assets\Scriptss\Player\Effects\PostPorcessing\ScreenFader.cs" />
-     <Compile Include="Assets\Scriptss\Player\Movement\RuuningEffect.cs" />
+     <Compile Include="Assets\Scriptss\Player\Inventiory\PlayerInventory.cs" />
+     <Compile Include="Assets\Scriptss\Player\Inventiory\InventoryItem.cs" />
+     <Compile Include="Assets\Scriptss\Player\Inventiory\InventoryItemObject.cs" />
      <None Include="Assets\QuickOutline\Resources\Shaders\OutlineMask.shader" />
      <None Include="Assets\QuickOutline\Resources\Shaders\OutlineFill.shader" />
     <Reference Include="UnityEngine">
@@ -686,6 +689,30 @@
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{7338b539-859d-07f4-f00a-a0383418d995}</Project>
       <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.csproj">
+      <Project>{5248d371-7a39-bbe3-22a8-55ec9b0da81b}</Project>
+      <Name>Unity.RenderPipelines.Core.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Searcher.Editor.csproj">
+      <Project>{03ea9ccd-7ee8-f771-5de5-5554906ae11e}</Project>
+      <Name>Unity.Searcher.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Core.Editor.csproj">
+      <Project>{bb5ca568-a957-1167-ff1b-7ce0d20ed357}</Project>
+      <Name>Unity.RenderPipelines.Core.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Core.ShaderLibrary.csproj">
+      <Project>{53521cbd-6131-052e-d703-66cbeedd0436}</Project>
+      <Name>Unity.RenderPipelines.Core.ShaderLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj">
+      <Project>{cd687734-2305-1639-7950-fdc49c6040c5}</Project>
+      <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ShaderGraph.Editor.csproj">
+      <Project>{ede71969-d06f-0801-5b17-628925cb0699}</Project>
+      <Name>Unity.ShaderGraph.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

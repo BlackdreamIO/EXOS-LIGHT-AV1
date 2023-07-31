@@ -9,39 +9,70 @@ interface Iinspectable
     public void Inspect(Transform objectHolder);
 }
 
+interface IpickUpItem
+{
+    public void PickUpItem();
+}
 public class interactor : MonoBehaviour
 {
     [SerializeField] Transform playerCamera;
     [SerializeField] Transform objectInspectTransform;
     [SerializeField] KeyCode InteractKey = KeyCode.E;
     [SerializeField] KeyCode InspectKey = KeyCode.E; 
+    [SerializeField] KeyCode PickUpItemkey = KeyCode.E;
     [SerializeField] float range = 10f;
 
-    private void Update() 
+    RaycastHit hit;
+
+    private void Update()
     {
-        RaycastHit hit;
+        CheckInspectorMethod();
+        CheckInteractMethod();
+        CheckFoundInventoryItem();
+    }
 
-        if(Input.GetKeyDown(InteractKey)) 
+    private void CheckInspectorMethod()
+    {
+        if (Input.GetKeyDown(InspectKey)) //, Inspector Caller
         {
-            if(Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit , range)){
-                
-                if(hit.collider.TryGetComponent(out IInteractable InteractObj)) 
-                {
-                    InteractObj.Interact();
-                }
-            }
-        }
-
-        if(Input.GetKeyDown(InteractKey)) 
-        {
-            if(Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit , range)){
-                
-                if(hit.collider.TryGetComponent(out Iinspectable InspectObj)) 
+            if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, range))
+            {
+                if (hit.collider.TryGetComponent(out Iinspectable InspectObj))
                 {
                     InspectObj.Inspect(objectInspectTransform);
                 }
             }
         }
-
     }
+
+    private void CheckInteractMethod()
+    {
+        if (Input.GetKeyDown(InteractKey)) //, Ineract Caller
+        {
+            if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, range))
+            {
+                if (hit.collider.TryGetComponent(out IInteractable InteractObj))
+                {
+                    InteractObj.Interact();
+                }
+            }
+        }
+    }
+    private void CheckFoundInventoryItem()
+    {
+        if (Input.GetKeyDown(PickUpItemkey)) //, Ineract Caller
+        {
+            if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, range))
+            {
+                if (hit.collider.GetComponent<InventoryItemObject>())
+                {
+                    if (hit.collider.TryGetComponent(out IpickUpItem IpickUpItem))
+                    {
+                        IpickUpItem.PickUpItem();
+                    }
+                }
+            }
+        }
+    }   
 }
+
