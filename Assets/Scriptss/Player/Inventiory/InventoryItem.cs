@@ -6,6 +6,7 @@ public class InventoryItem : ScriptableObject
 {
     public string ItemName;
     public string ItemType;
-    public string Useable;
-    public Sprite ItemSprite;
+    public string ItemUseable;
+    public int ItemWeight = 20;
+    public Sprite ItemSprite; 
 }

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ItemNew
   m_EditorClassIdentifier: 
   ItemName: Flaslight
-  ItemType: object
-  Useable: unknown
+  ItemType: flash
+  ItemUseable: Yes
+  ItemWeight: 10
   ItemSprite: {fileID: 0}

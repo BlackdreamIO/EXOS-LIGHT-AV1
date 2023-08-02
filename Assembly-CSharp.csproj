@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -48,20 +48,41 @@
      <Compile Include="Assets\Scriptss\Player\Interaction\V2\interactor.cs" />
      <Compile Include="Assets\Scriptss\SimpleCameraController.cs" />
      <Compile Include="Assets\Scriptss\Player\Movement\HeadBOB.cs" />
+     <Compile Include="Assets\Scriptss\Player\Inventiory\InventoryItemObject.cs" />
      <Compile Include="Assets\Scriptss\Player\Effects\PostPorcessing\PostEffectScirptableObject.cs" />
      <Compile Include="Assets\Scriptss\Player\Effects\Outline\OulineBlend.cs" />
+     <Compile Include="Assets\Scriptss\Player\Inventiory\InventoryItem.cs" />
      <Compile Include="Assets\Scriptss\Player\Effects\PostPorcessing\MultiDamp.cs" />
      <Compile Include="Assets\Scriptss\Player\Interaction\V2\IinspectorObject.cs" />
      <Compile Include="Assets\Scriptss\Player\Effects\Array Tutorial\ArrayTutorial.cs" />
+     <Compile Include="Assets\Scriptss\Player\Inventiory\PlayerInventory.cs" />
      <Compile Include="Assets\Scriptss\Player\Effects\PostPorcessing\SorroundDetector.cs" />
      <Compile Include="Assets\Scriptss\Player\Interaction\Interactor.cs" />
      <Compile Include="Assets\Scriptss\EditorDrawer\EditorDrawer.cs" />
      <Compile Include="Assets\Scriptss\Player\Effects\PostPorcessing\ScreenFader.cs" />
-     <Compile Include="Assets\Scriptss\Player\Inventiory\PlayerInventory.cs" />
-     <Compile Include="Assets\Scriptss\Player\Inventiory\InventoryItem.cs" />
-     <Compile Include="Assets\Scriptss\Player\Inventiory\InventoryItemObject.cs" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <None Include="Assets\QuickOutline\Resources\Shaders\OutlineMask.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\QuickOutline\Resources\Shaders\OutlineFill.shader" />
+     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <Reference Include="UnityEngine">
         <HintPath>D:\Unity\Unity-all\2020.3.22f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -638,6 +659,10 @@
       <Project>{cf57c43d-888d-3cbe-131d-b62079a9d72e}</Project>
       <Name>Hierarchy2.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.ShaderGraph.Editor.csproj">
+      <Project>{ede71969-d06f-0801-5b17-628925cb0699}</Project>
+      <Name>Unity.ShaderGraph.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
       <Project>{89147f5a-bcef-4e7a-2ab3-ffad68d7532c}</Project>
       <Name>Unity.VSCode.Editor</Name>
@@ -654,6 +679,10 @@
       <Project>{88556eb7-8ed7-6d29-aa2f-cc98db23afca}</Project>
       <Name>Unity.VisualStudio.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj">
+      <Project>{cd687734-2305-1639-7950-fdc49c6040c5}</Project>
+      <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Timeline.Editor.csproj">
       <Project>{4be664e4-8140-cb9a-bd36-78a29460345b}</Project>
       <Name>Unity.Timeline.Editor</Name>
@@ -665,6 +694,14 @@
     <ProjectReference Include="Unity.TextMeshPro.csproj">
       <Project>{fe7dcefb-e88f-1b2e-58d0-d546d05a93f2}</Project>
       <Name>Unity.TextMeshPro</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Searcher.Editor.csproj">
+      <Project>{03ea9ccd-7ee8-f771-5de5-5554906ae11e}</Project>
+      <Name>Unity.Searcher.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.csproj">
+      <Project>{5248d371-7a39-bbe3-22a8-55ec9b0da81b}</Project>
+      <Name>Unity.RenderPipelines.Core.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Hierarchy2.Runtime.csproj">
       <Project>{2031d791-a21a-74f6-d97e-c951bcca2783}</Project>
@@ -686,33 +723,17 @@
       <Project>{6f47db5b-f1de-a61c-574b-5878aad217e9}</Project>
       <Name>Unity.Rider.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{7338b539-859d-07f4-f00a-a0383418d995}</Project>
-      <Name>UnityEngine.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.csproj">
-      <Project>{5248d371-7a39-bbe3-22a8-55ec9b0da81b}</Project>
-      <Name>Unity.RenderPipelines.Core.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Searcher.Editor.csproj">
-      <Project>{03ea9ccd-7ee8-f771-5de5-5554906ae11e}</Project>
-      <Name>Unity.Searcher.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Core.Editor.csproj">
-      <Project>{bb5ca568-a957-1167-ff1b-7ce0d20ed357}</Project>
-      <Name>Unity.RenderPipelines.Core.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Core.ShaderLibrary.csproj">
       <Project>{53521cbd-6131-052e-d703-66cbeedd0436}</Project>
       <Name>Unity.RenderPipelines.Core.ShaderLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj">
-      <Project>{cd687734-2305-1639-7950-fdc49c6040c5}</Project>
-      <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary</Name>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{7338b539-859d-07f4-f00a-a0383418d995}</Project>
+      <Name>UnityEngine.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.ShaderGraph.Editor.csproj">
-      <Project>{ede71969-d06f-0801-5b17-628925cb0699}</Project>
-      <Name>Unity.ShaderGraph.Editor</Name>
+    <ProjectReference Include="Unity.RenderPipelines.Core.Editor.csproj">
+      <Project>{bb5ca568-a957-1167-ff1b-7ce0d20ed357}</Project>
+      <Name>Unity.RenderPipelines.Core.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

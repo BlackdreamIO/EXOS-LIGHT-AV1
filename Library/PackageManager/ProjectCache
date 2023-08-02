@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638263347320584016
-    m_Hash: 4180313478
+      ticks: 638265088086224424
+    m_Hash: 3824243596
   m_LockFileStatus:
     m_FilePath: D:/EXOS LIGHT AV1/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638263347320808602
-    m_Hash: 903474811
+      ticks: 638265088086385545
+    m_Hash: 1844706419
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -107,6 +107,7 @@ m_PackageAssets:
         - 2.0.3
         - 2.0.4
         - 2.0.5
+        - 2.0.7
         - 2.1.0-preview.3
         - 2.1.0-preview.5
         - 2.1.0-preview.6
@@ -375,6 +376,7 @@ m_PackageAssets:
         - 2.0.16
         - 2.0.17
         - 2.0.18
+        - 2.0.20
         compatible:
         - 1.0.2
         - 1.0.3
@@ -397,7 +399,8 @@ m_PackageAssets:
         - 2.0.16
         - 2.0.17
         - 2.0.18
-        verified: 2.0.18
+        - 2.0.20
+        verified: 2.0.20
       dependencies:
       - name: com.unity.test-framework
         version: 1.1.9
@@ -431,12 +434,12 @@ m_PackageAssets:
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.visualstudio.git
         revision: 680e06d94ffca728223ae2cb14bb919cd354e2c1
         path: 
-    - packageId: com.unity.ide.vscode@1.2.4
+    - packageId: com.unity.ide.vscode@1.2.5
       testable: 0
       isDirectDependency: 1
-      version: 1.2.4
+      version: 1.2.5
       source: 1
-      resolvedPath: D:\EXOS LIGHT AV1\Library\PackageCache\com.unity.ide.vscode@1.2.4
+      resolvedPath: D:\EXOS LIGHT AV1\Library\PackageCache\com.unity.ide.vscode@1.2.5
       assetPath: Packages/com.unity.ide.vscode
       name: com.unity.ide.vscode
       displayName: Visual Studio Code Editor
@@ -496,13 +499,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637660806170000000
+      datePublishedTicks: 637800255360000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
-        url: git+https://github.com/Unity-Technologies/com.unity.ide.vscode.git
-        revision: 1f4f605d5c988cb610c372b5c5216c46cc8f5d30
+        url: https://github.com/Unity-Technologies/com.unity.ide.vscode.git
+        revision: b0740c80bfc2440527c317109f7c3d9100132722
         path: 
     - packageId: com.unity.postprocessing@3.1.1
       testable: 0

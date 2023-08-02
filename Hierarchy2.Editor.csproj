@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -36,13 +36,13 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Hierarchy 2\Editor\HierarchyResources.cs" />
+     <Compile Include="Assets\Hierarchy 2\Editor\SceneRenamePopup.cs" />
+     <Compile Include="Assets\Hierarchy 2\Editor\HierarchyEditor.cs" />
+     <Compile Include="Assets\Hierarchy 2\Editor\SelectionsRenamePopup.cs" />
      <Compile Include="Assets\Hierarchy 2\Editor\HierarchyFolderEditor.cs" />
      <Compile Include="Assets\Hierarchy 2\Editor\HierarchySettings.cs" />
-     <Compile Include="Assets\Hierarchy 2\Editor\SelectionsRenamePopup.cs" />
      <Compile Include="Assets\Hierarchy 2\Editor\InstantInspector.cs" />
-     <Compile Include="Assets\Hierarchy 2\Editor\SceneRenamePopup.cs" />
-     <Compile Include="Assets\Hierarchy 2\Editor\HierarchyResources.cs" />
-     <Compile Include="Assets\Hierarchy 2\Editor\HierarchyEditor.cs" />
      <None Include="Assets\Hierarchy 2\Editor\Hierarchy2.Editor.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>D:\Unity\Unity-all\2020.3.22f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -286,6 +286,9 @@
     </Reference>
     <Reference Include="log4netPlastic">
         <HintPath>D:\EXOS LIGHT AV1\Library\PackageCache\com.unity.collab-proxy@1.13.5\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory">
+        <HintPath>D:\EXOS LIGHT AV1\Library\PackageCache\com.unity.render-pipelines.core@10.7.0\Editor\ShaderGenerator\ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
         <HintPath>D:\EXOS LIGHT AV1\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>

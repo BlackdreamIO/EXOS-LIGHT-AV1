@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -36,19 +36,19 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Packages\com.unity.searcher\Editor\Searcher\SearcherItem.cs" />
-     <Compile Include="Packages\com.unity.searcher\Editor\Searcher\SearcherAdapter.cs" />
-     <Compile Include="Packages\com.unity.searcher\Editor\Searcher\Searcher.cs" />
-     <Compile Include="Packages\com.unity.searcher\Editor\Searcher\SearcherControl.cs" />
-     <Compile Include="Packages\com.unity.searcher\Editor\AssemblyInfo.cs" />
-     <Compile Include="Packages\com.unity.searcher\Editor\Searcher\SearcherHighlighter.cs" />
-     <Compile Include="Packages\com.unity.searcher\Editor\Searcher\SearcherWindow.cs" />
-     <Compile Include="Packages\com.unity.searcher\Editor\Searcher\SearcherDatabaseBase.cs" />
-     <Compile Include="Packages\com.unity.searcher\Editor\Searcher\SearcherDatabase.cs" />
-     <None Include="Packages\com.unity.searcher\Editor\Unity.Searcher.Editor.asmdef" />
-     <None Include="Packages\com.unity.searcher\Editor\Resources\SearcherItem.uxml" />
-     <None Include="Packages\com.unity.searcher\Editor\Resources\SearcherWindow.uxml" />
-     <None Include="Packages\com.unity.searcher\Editor\Resources\Searcher.uss" />
+     <Compile Include="Library\PackageCache\com.unity.searcher@4.3.2\Editor\Searcher\SearcherItem.cs" />
+     <Compile Include="Library\PackageCache\com.unity.searcher@4.3.2\Editor\Searcher\SearcherAdapter.cs" />
+     <Compile Include="Library\PackageCache\com.unity.searcher@4.3.2\Editor\Searcher\Searcher.cs" />
+     <Compile Include="Library\PackageCache\com.unity.searcher@4.3.2\Editor\Searcher\SearcherWindow.cs" />
+     <Compile Include="Library\PackageCache\com.unity.searcher@4.3.2\Editor\Searcher\SearcherDatabaseBase.cs" />
+     <Compile Include="Library\PackageCache\com.unity.searcher@4.3.2\Editor\Searcher\SearcherDatabase.cs" />
+     <Compile Include="Library\PackageCache\com.unity.searcher@4.3.2\Editor\Searcher\SearcherControl.cs" />
+     <Compile Include="Library\PackageCache\com.unity.searcher@4.3.2\Editor\AssemblyInfo.cs" />
+     <Compile Include="Library\PackageCache\com.unity.searcher@4.3.2\Editor\Searcher\SearcherHighlighter.cs" />
+     <None Include="Library\PackageCache\com.unity.searcher@4.3.2\Editor\Unity.Searcher.Editor.asmdef" />
+     <None Include="Library\PackageCache\com.unity.searcher@4.3.2\Editor\Resources\SearcherItem.uxml" />
+     <None Include="Library\PackageCache\com.unity.searcher@4.3.2\Editor\Resources\SearcherWindow.uxml" />
+     <None Include="Library\PackageCache\com.unity.searcher@4.3.2\Editor\Resources\Searcher.uss" />
     <Reference Include="UnityEngine">
         <HintPath>D:\Unity\Unity-all\2020.3.22f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -292,11 +292,11 @@
     <Reference Include="log4netPlastic">
         <HintPath>D:\EXOS LIGHT AV1\Library\PackageCache\com.unity.collab-proxy@1.13.5\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-        <HintPath>D:\EXOS LIGHT AV1\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="ICSharpCode.NRefactory">
         <HintPath>D:\EXOS LIGHT AV1\Library\PackageCache\com.unity.render-pipelines.core@10.7.0\Editor\ShaderGenerator\ICSharpCode.NRefactory.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+        <HintPath>D:\EXOS LIGHT AV1\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
         <HintPath>D:\EXOS LIGHT AV1\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
