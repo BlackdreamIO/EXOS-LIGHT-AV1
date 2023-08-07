@@ -37,9 +37,13 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
+     <Compile Include="Assets\ExosLightDiv\Content\StartScene\Scritps\RadioLightSync.cs" />
+     <Compile Include="Assets\ExosLightDiv\Prototyping\RXR\FP CC V.1\_Scripts\Player\PlayerMovementController.cs" />
      <Compile Include="Assets\Scriptss\Player\FlashLight\FlashLight.cs" />
+     <Compile Include="Assets\ExosLightDiv\Prototyping\RXR\FP CC V.1\_Scripts\Player\PlayerCameraController.cs" />
      <Compile Include="Assets\Scriptss\Player\Movement\RuuningEffect.cs" />
      <Compile Include="Assets\Scriptss\Player\Movement\Player.cs" />
+     <Compile Include="Assets\ExosLightDiv\Content\StartScene\Scritps\AudioWaveformAnalyzer.cs" />
      <Compile Include="Assets\Scriptss\Player\PlayerUI\Scirpts\Manager\PlayerUIManager.cs" />
      <Compile Include="Assets\Scriptss\Player\Interaction\V2\IRotator.cs" />
      <Compile Include="Assets\Scriptss\Player\Movement\PlayerStamina.cs" />
@@ -47,15 +51,16 @@
      <Compile Include="Assets\Scriptss\EditorDrawer\EditorPostEngineLabel.cs" />
      <Compile Include="Assets\Scriptss\Player\Interaction\V2\interactor.cs" />
      <Compile Include="Assets\Scriptss\SimpleCameraController.cs" />
-     <Compile Include="Assets\Scriptss\Player\Movement\HeadBOB.cs" />
+     <Compile Include="Assets\Scriptss\Player\Movement\Motion\HeadBOB.cs" />
      <Compile Include="Assets\Scriptss\Player\Inventiory\InventoryItemObject.cs" />
      <Compile Include="Assets\Scriptss\Player\Effects\PostPorcessing\PostEffectScirptableObject.cs" />
      <Compile Include="Assets\Scriptss\Player\Effects\Outline\OulineBlend.cs" />
      <Compile Include="Assets\Scriptss\Player\Inventiory\InventoryItem.cs" />
      <Compile Include="Assets\Scriptss\Player\Effects\PostPorcessing\MultiDamp.cs" />
-     <Compile Include="Assets\Scriptss\Player\Interaction\V2\IinspectorObject.cs" />
+     <Compile Include="Assets\Scriptss\Player\Interaction\V2\InspectorObject.cs" />
      <Compile Include="Assets\Scriptss\Player\Effects\Array Tutorial\ArrayTutorial.cs" />
      <Compile Include="Assets\Scriptss\Player\Inventiory\PlayerInventory.cs" />
+     <Compile Include="Assets\ExosLightDiv\Prototyping\RXR\FP CC V.1\_Scripts\Player\PlayerCameraMotion.cs" />
      <Compile Include="Assets\Scriptss\Player\Effects\PostPorcessing\SorroundDetector.cs" />
      <Compile Include="Assets\Scriptss\Player\Interaction\Interactor.cs" />
      <Compile Include="Assets\Scriptss\EditorDrawer\EditorDrawer.cs" />
