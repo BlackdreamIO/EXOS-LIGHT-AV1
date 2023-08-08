@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scriptss\SimpleCameraController.cs" />
      <Compile Include="Assets\Scriptss\Player\Movement\Motion\HeadBOB.cs" />
      <Compile Include="Assets\Scriptss\Player\Inventiory\InventoryItemObject.cs" />
+     <Compile Include="Assets\Tetra Attributes\Example\Script\AttributesExample.cs" />
      <Compile Include="Assets\Scriptss\Player\Effects\PostPorcessing\PostEffectScirptableObject.cs" />
      <Compile Include="Assets\Scriptss\Player\Effects\Outline\OulineBlend.cs" />
      <Compile Include="Assets\Scriptss\Player\Inventiory\InventoryItem.cs" />
@@ -65,6 +66,7 @@
      <Compile Include="Assets\Scriptss\Player\Interaction\Interactor.cs" />
      <Compile Include="Assets\Scriptss\EditorDrawer\EditorDrawer.cs" />
      <Compile Include="Assets\Scriptss\Player\Effects\PostPorcessing\ScreenFader.cs" />
+     <Compile Include="Assets\Scriptss\Player\Movement\Camera\CameraController.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -676,6 +678,10 @@
       <Project>{0721820f-fa39-bc75-92fd-f94454efb5ea}</Project>
       <Name>Unity.Postprocessing.Runtime</Name>
     </ProjectReference>
+    <ProjectReference Include="TetraCreations.Attributes.csproj">
+      <Project>{2cb11650-7c11-85e5-0867-902f3b8d4e6d}</Project>
+      <Name>TetraCreations.Attributes</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
       <Project>{caa52172-caca-44ed-b47f-bf52154026b9}</Project>
       <Name>Unity.TextMeshPro.Editor</Name>
@@ -724,13 +730,17 @@
       <Project>{b892ce36-cc13-a186-ba4d-26092d5e1fb4}</Project>
       <Name>Unity.PlasticSCM.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.Rider.Editor.csproj">
-      <Project>{6f47db5b-f1de-a61c-574b-5878aad217e9}</Project>
-      <Name>Unity.Rider.Editor</Name>
+    <ProjectReference Include="TetraCreations.Attributes.Editor.csproj">
+      <Project>{efe3f843-c0fb-d359-c40f-4b353a3a7e92}</Project>
+      <Name>TetraCreations.Attributes.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Core.ShaderLibrary.csproj">
       <Project>{53521cbd-6131-052e-d703-66cbeedd0436}</Project>
       <Name>Unity.RenderPipelines.Core.ShaderLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Rider.Editor.csproj">
+      <Project>{6f47db5b-f1de-a61c-574b-5878aad217e9}</Project>
+      <Name>Unity.Rider.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{7338b539-859d-07f4-f00a-a0383418d995}</Project>

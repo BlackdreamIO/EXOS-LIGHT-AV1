@@ -87,11 +87,11 @@ public class InspectorObject : MonoBehaviour, Iinspectable
     {
         if(toggle) 
         {
-            Player.instance.DisableMouseMovement();
+            //Player.instance.DisableMouseMovement();
         }
         else if(!toggle)
         {
-            Player.instance.EnableMouseMovement();
+            //Player.instance.EnableMouseMovement();
         }
     }
     private void RotationForInspectObject()

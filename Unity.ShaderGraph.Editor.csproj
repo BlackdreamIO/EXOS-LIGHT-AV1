@@ -382,10 +382,10 @@
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Nodes\Procedural\CheckerboardNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Nodes\Utility\Logic\AllNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Drawing\Views\FloatField.cs" />
-     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Util\QueuePool.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Drawing\Views\Slots\Texture3DSlotControlView.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Nodes\Input\Texture\SampleCubemapNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Graphs\SerializableTexture.cs" />
+     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Util\QueuePool.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Nodes\Utility\PreviewNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Nodes\Input\Geometry\ScreenPositionNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Nodes\Utility\Logic\ComparisonNode.cs" />
