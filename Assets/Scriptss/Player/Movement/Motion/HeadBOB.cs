@@ -1,67 +1,95 @@
 using UnityEngine;
-using EL.Player;
-
-namespace EL.Player.Motion
+using EL.Core.Player;
+public class HeadBOB : MonoBehaviour
 {
-    public class HeadBOB : MonoBehaviour
-    {  
-        
-        [Space] [Header("SHAKE SETTINGS")] [Space]
-        [SerializeField] private float shakeDuration = 0.1f; [Tooltip("Duration of the shake effect")]
-        [SerializeField] private float shakeAmount = 0.1f; [Tooltip("Intensity of the shake effect")] 
+    [SerializeField] HeadBOBConfigure[] headBOBConfigure;
+    [SerializeField] Player playerScript;
+    
+    [SerializeField] Transform _camera, _cameraHolder;
 
-        [Space]
-        public bool startShake = false;
+    private float currentFrequercy;
+    private float currentAmount;
+    private float currentSmooth;
+    private int index;
 
-        public float T;
-        public float OM; // original movement
-        public float SM; // sprint movement
-        public float OPM; // original output movement
+    private float timer = 0.0f;
 
-        private Vector3 originalPosition;
-        private Quaternion originalRotation;
-        private float refVelocity;
+    private float _toggleSpeed = 3.0f;
+    private Vector3 _startPos;
+    private CharacterController _controller;
 
-        private void Start() 
-        { 
-            originalPosition = transform.localPosition;
-            originalRotation = transform.localRotation;
+    bool _enableHeadBob = true;
+    private void Awake()
+    {
+        _controller = GetComponent<CharacterController>();
+        _startPos = _camera.localPosition;
+    }
+
+    void Update()
+    {
+        if(_enableHeadBob) {
+            CheckForHeadBobTrigger();
+            UpdatePerameter();
+            index = GetPlayerMovementIndex();
         }
-
-        private void Update() 
+    }
+    private void UpdatePerameter()
+    {
+        for (int i = 0; i < headBOBConfigure.Length; i++)
         {
-            if(Input.GetKey(KeyCode.LeftShift))
+            if(i == index)
             {
-                OPM = Mathf.SmoothDamp(OPM, SM, ref refVelocity, T);
-            }
-            else
-            {
-                OPM = Mathf.SmoothDamp(OPM, OM, ref refVelocity, T);
+                currentFrequercy = headBOBConfigure[i]._frequency;
+                currentAmount = headBOBConfigure[i]._amplitude;
+                currentSmooth = headBOBConfigure[i]._smooth;
             }
         }
-     
-        public void ShakeCamera()
-        {
-            if (shakeDuration > 0)
-            {
-                // Apply random displacements to the camera's position and rotation
-                transform.localPosition = originalPosition + Random.insideUnitSphere * shakeAmount;
-                transform.localRotation = new Quaternion(
-                    originalRotation.x + Random.Range(-shakeAmount, shakeAmount) * 0.2f,
-                    originalRotation.y + Random.Range(-shakeAmount, shakeAmount) * 0.2f,
-                    originalRotation.z + Random.Range(-shakeAmount, shakeAmount) * 0.2f,
-                    originalRotation.w + Random.Range(-shakeAmount, shakeAmount) * 0.2f
-                );
+    }
 
-                shakeDuration -= Time.deltaTime;
-            }
-            else
-            {
-                // Reset the camera's position and rotation
-                shakeDuration = 0f;
-                transform.localPosition = originalPosition;
-                transform.localRotation = originalRotation;
-            }
+    private int GetPlayerMovementIndex()
+    {
+        int i;
+
+        switch (playerScript.playerState)
+        {
+            case Player.PlayerState.idle:
+                i = 0;
+                break;
+            case Player.PlayerState.walking:
+                i = 1;
+                break;
+            case Player.PlayerState.running:
+                i = 2;
+                break;
+            case Player.PlayerState.crouching:
+                i = 3;
+                break;
+            default:
+                i = 0;
+                break;
         }
+
+        return i;
+    }
+    private void CheckForHeadBobTrigger()
+    {
+        float playerMagnitude = new Vector3(playerScript.playerInputX, 0, playerScript.playerInputY).magnitude;
+
+        if (playerMagnitude > 0)
+        {
+            StartHeadBOB();
+        }
+    }
+    private Vector3 StartHeadBOB()
+    {
+        Vector3 pos = Vector3.zero;
+        pos.y += Mathf.Lerp(pos.y, Mathf.Sin(Time.time * currentFrequercy) * currentAmount * 1.4f, currentSmooth * Time.deltaTime);
+        pos.x += Mathf.Lerp(pos.x, Mathf.Sin(Time.time * currentFrequercy / 2f) * currentAmount * 1.6f, currentSmooth * Time.deltaTime);
+        transform.localPosition += pos;
+        return pos;
+    }
+    public void SetHeadBobActivation(bool active)
+    {
+        _enableHeadBob = active;
     }
 }

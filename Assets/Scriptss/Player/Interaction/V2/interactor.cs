@@ -1,5 +1,4 @@
 using UnityEngine;
-
 interface IInteractable
 {
     public void Interact();
@@ -15,6 +14,7 @@ interface IpickUpItem
 }
 public class interactor : MonoBehaviour
 {
+    [SerializeField] PlayerUIManager playerUI;
     [SerializeField] Transform playerCamera;
     [SerializeField] Transform objectInspectTransform;
     [SerializeField] KeyCode InteractKey = KeyCode.E;
@@ -24,11 +24,40 @@ public class interactor : MonoBehaviour
 
     RaycastHit hit;
 
+    public System.Collections.Generic.List<InspectorObject> inspectorsList;
+    private void Start() 
+    {
+        InspectorObject[] interactableObjects = GameObject.FindObjectsOfType<InspectorObject>();
+
+        for (int i = 0; i < interactableObjects.Length; i++)
+        {
+            inspectorsList.Add(interactableObjects[i]);
+        }
+    }
     private void Update()
     {
         CheckInspectorMethod();
         CheckInteractMethod();
         CheckFoundInventoryItem();
+        
+        CheckForObjectID();
+    }
+
+    private void CheckForObjectID()
+    {
+        if(inspectorsList.Count > 0)
+        {
+            for (int i = 0; i < inspectorsList.Count; i++)
+            {
+                if(Vector3.Distance(transform.position, inspectorsList[i].gameObject.transform.position) < range)
+                {
+                    Debug.Log(inspectorsList[i].ID);
+                    playerUI.PopUpObjectID(inspectorsList[i].ID);
+                    //inspectorsList[i].canvas.transform.LookAt(playerCamera);
+                    break;
+                }
+            }
+        }
     }
 
     private void CheckInspectorMethod()
@@ -44,7 +73,6 @@ public class interactor : MonoBehaviour
             }
         }
     }
-
     private void CheckInteractMethod()
     {
         if (Input.GetKeyDown(InteractKey)) //, Ineract Caller

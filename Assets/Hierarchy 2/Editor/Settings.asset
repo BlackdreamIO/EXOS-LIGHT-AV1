@@ -29,7 +29,7 @@ MonoBehaviour:
     colorRowOdd: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 1}
     colorGrid: {r: 0.16078432, g: 0.16078432, b: 0.16078432, a: 1}
     colorTreeView: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
-    colorLockIcon: {r: 0.69803923, g: 0.69803923, b: 0.69803923, a: 1}
+    colorLockIcon: {r: 0.7735849, g: 0.748042, b: 0.748042, a: 1}
     tagColor: {r: 1, g: 1, b: 1, a: 1}
     layerColor: {r: 0.7058824, g: 0.7058824, b: 0.7058824, a: 1}
     comSelBGColor: {r: 0.1607843, g: 1, b: 0.36190915, a: 0.5529412}
@@ -41,7 +41,7 @@ MonoBehaviour:
     colorRowOdd: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 1}
     colorGrid: {r: 0.16078432, g: 0.16078432, b: 0.16078432, a: 1}
     colorTreeView: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
-    colorLockIcon: {r: 0.69803923, g: 0.69803923, b: 0.69803923, a: 1}
+    colorLockIcon: {r: 0.7735849, g: 0.748042, b: 0.748042, a: 1}
     tagColor: {r: 1, g: 1, b: 1, a: 1}
     layerColor: {r: 0.7058824, g: 0.7058824, b: 0.7058824, a: 1}
     comSelBGColor: {r: 0.1607843, g: 1, b: 0.36190915, a: 0.5529412}
@@ -73,7 +73,17 @@ MonoBehaviour:
   applyLayerTargetAndChild: 1
   separatorStartWith: --->
   separatorDefaultTag: Untagged
-  useInstantBackground: 1
-  instantBackgroundColors: []
+  useInstantBackground: 0
+  instantBackgroundColors:
+  - active: 0
+    useStartWith: 0
+    useTag: 0
+    useLayer: 0
+    startWith: 
+    tag: 
+    layer:
+      serializedVersion: 2
+      m_Bits: 0
+    color: {r: 0, g: 0, b: 0, a: 0}
   onlyDisplayWhileMouseEnter: 0
   contentDisplay: -1

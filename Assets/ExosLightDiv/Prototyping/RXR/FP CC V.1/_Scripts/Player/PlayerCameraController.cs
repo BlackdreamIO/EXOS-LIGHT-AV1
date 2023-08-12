@@ -1,66 +1,59 @@
 ﻿using UnityEngine;
 
-namespace RXR.FP
+public class PlayerCameraController : MonoBehaviour
 {
-    
-    public class PlayerCameraController : MonoBehaviour
+    //public static PlayerCameraController instence;
+
+    [SerializeField] Transform player;
+
+    [SerializeField] Camera cam;
+    [SerializeField] float mouseSensitivity = 3.0f;
+    [SerializeField] float Roatation_X = 90;
+    private float verticalRotation = 0f;
+    private float horizontalRotation;
+
+    public bool _enable_camera = true;
+    private void Start()
     {
-        // Exposed properties.
-        [Header("General")]
-        [SerializeField] private Transform m_playerTransform = null;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
-        [Header("Input Settings")]
-        [SerializeField] private Vector2 m_sensitivity = new Vector2(0.3f, 0.3f);
-        [SerializeField] private Vector2 m_smooth = new Vector3(0.03f, 0.03f);
-
-        [Header("Control Settings")]
-        [SerializeField] [Range(-90, 90)] private Vector2 yLimits = new Vector2(-80.0f, 80.0f);
-        [SerializeField] private float sensitivityMulti;
-
-
-        // Private class members.
-        private float m_refX = 0.0f;
-        private float m_refY = 0.0f;
-        private float m_smoothedX = 0.0f;
-        private float m_smoothedY = 0.0f;
-        private Vector2 m_inputs = Vector2.zero;
-        private Quaternion m_cameraInitialRot = Quaternion.identity;
-        private Quaternion m_playerInitialRot = Quaternion.identity;
-        private Transform m_thisTransform = null;
-        private Vector2 m_input = Vector2.zero;
-
-        void Start()
-        {
-            m_thisTransform = base.transform;
-            m_cameraInitialRot = m_thisTransform.localRotation;
-            m_playerInitialRot = m_playerTransform.rotation;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false; 
-        }
-
-        void LateUpdate()
-        {
-            
-            float sensitivityMultiplier = sensitivityMulti;            
-
-            m_input.x = Input.GetAxis("Mouse X");
-            m_input.y = Input.GetAxis("Mouse Y");
-                        
-            m_inputs.x += m_input.x * m_sensitivity.x;
-            m_inputs.y += -m_input.y * m_sensitivity.y;
-
-            // Smooth & clamp
-            m_smoothedX = Mathf.SmoothDamp(m_smoothedX, m_inputs.x, ref m_refX, m_smooth.x);
-            m_smoothedY = Mathf.SmoothDamp(m_smoothedY, m_inputs.y, ref m_refY, m_smooth.y);
-            m_inputs.y = Mathf.Clamp(m_inputs.y, yLimits.x, yLimits.y);
-
-            // Apply rotation.
-            Quaternion q_X = Quaternion.AngleAxis(m_smoothedX, Vector3.up);
-            Quaternion q_Y = Quaternion.AngleAxis(m_smoothedY, Vector3.right);
-            m_playerTransform.rotation = m_playerInitialRot * q_X;
-            m_thisTransform.localRotation = m_cameraInitialRot * q_Y;
-        }
-
+        //if(instence == null) { instence = this; }
+        //else { Destroy(gameObject); }
 
     }
+    private void Update()
+    {
+        if (_enable_camera)
+        {
+            LockedCamera();
+        }
+        else
+        {
+            UnlockedCamera();
+        }
+    }
+    private void LockedCamera()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        horizontalRotation = Input.GetAxis("Mouse X") * mouseSensitivity;
+        verticalRotation -= Input.GetAxis("Mouse Y") * mouseSensitivity;
+        verticalRotation = Mathf.Clamp(verticalRotation, -Roatation_X, Roatation_X);
+        cam.transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
+
+        player.Rotate(0, horizontalRotation, 0);
+    }
+    private void UnlockedCamera()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void SetPlayerCamActive(bool active)
+    {
+        _enable_camera = active;
+    }
 }
+

@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using TetraCreations.Attributes;
 
 [DisallowMultipleComponent]
 
@@ -68,6 +69,7 @@ public class Outline : MonoBehaviour {
   + "Precompute disabled: Per-vertex calculations are performed at runtime in Awake(). This may cause a pause for large meshes.")]
   private bool precomputeOutline;
 
+
   [SerializeField, HideInInspector]
   private List<Mesh> bakeKeys = new List<Mesh>();
 
@@ -79,7 +81,6 @@ public class Outline : MonoBehaviour {
   private Material outlineFillMaterial;
 
   private bool needsUpdate;
-
   void Awake() {
 
     // Cache renderers
@@ -137,6 +138,7 @@ public class Outline : MonoBehaviour {
     }
   }
 
+  #region Outline
   void OnDisable() {
     foreach (var renderer in renderers) {
 
@@ -306,4 +308,6 @@ public class Outline : MonoBehaviour {
         break;
     }
   }
+
+  #endregion
 }

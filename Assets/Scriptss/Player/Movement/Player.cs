@@ -1,15 +1,11 @@
 using UnityEngine;
-using System.Collections;
-using EL.Player.Motion;
 using TetraCreations.Attributes;
 
-namespace EL.Player
+namespace EL.Core.Player
 {
     [RequireComponent(typeof(CharacterController))]
     public class Player : MonoBehaviour
     {   
-        public static Player instance;
-
         //--------------------------------------------------------------------------------------//
 
         #region MOVEMENT VARIABLES
@@ -17,13 +13,11 @@ namespace EL.Player
         [Title("MOVEMENT", TitleColor.Cyan, TitleColor.White, 1f, 20f)]
 
         [SerializeField] bool EditMovementSetting;
+        [DrawIf(nameof(EditMovementSetting), true, DisablingType.DontDraw)] [SerializeField] Transform cameraRoot;
         [DrawIf(nameof(EditMovementSetting), true, DisablingType.DontDraw)] [SerializeField] float moveSpeed = 6.0f;
         [DrawIf(nameof(EditMovementSetting), true, DisablingType.DontDraw)] [SerializeField] float sprintSpeed = 12f;
         [DrawIf(nameof(EditMovementSetting), true, DisablingType.DontDraw)] [SerializeField] float smoothTime = 12f;
-        [DrawIf(nameof(EditMovementSetting), true, DisablingType.DontDraw)] [SerializeField] float m_crouchSmoothTime = 3.0f;
-        [DrawIf(nameof(EditMovementSetting), true, DisablingType.DontDraw)] [SerializeField] float m_crouchMoveSpeed = 3f;
-        [DrawIf(nameof(EditMovementSetting), true, DisablingType.DontDraw)] [SerializeField] float m_defaultScale = 3.0f;
-        [DrawIf(nameof(EditMovementSetting), true, DisablingType.DontDraw)] [SerializeField] float m_crouchScale = 3.0f;
+       
         [DrawIf(nameof(EditMovementSetting), true, DisablingType.DontDraw)][SerializeField] float gravity = 20.0f;
 
         #endregion
@@ -34,8 +28,8 @@ namespace EL.Player
 
         [SerializeField] bool EditStaminaSetting;
 
-        [DrawIf(nameof(EditStaminaSetting), true, DisablingType.DontDraw)] [SerializeField] float m_Stamina;
-        [DrawIf(nameof(EditStaminaSetting), true, DisablingType.DontDraw)] [SerializeField] float m_minStamina;
+        [DrawIf(nameof(EditStaminaSetting), true, DisablingType.DontDraw)]  public float m_Stamina;
+        [DrawIf(nameof(EditStaminaSetting), true, DisablingType.DontDraw)]  public float m_minStamina;
         [DrawIf(nameof(EditStaminaSetting), true, DisablingType.DontDraw)] [SerializeField] float m_StaminaReduce;
         [DrawIf(nameof(EditStaminaSetting), true, DisablingType.DontDraw)] [SerializeField] float m_StaminaIDelay;
         [DrawIf(nameof(EditStaminaSetting), true, DisablingType.DontDraw)] [SerializeField] float m_IdleStaminaIncrease;
@@ -55,10 +49,8 @@ namespace EL.Player
 
         #endregion
 
-        public float mouseSensitivity = 2.0f;
-        private float verticalRotation = 0f;
-        private Camera playerCamera;
-        // Script Variables
+        #region SCIRPTS VARIABLES
+
         private CharacterController characterController;
         private float originalMoveSpeed;
 
@@ -66,17 +58,17 @@ namespace EL.Player
         private bool IsIdle;
         private bool IsRunning;
         private bool IsCrouching;
+        private Vector3 originalCenter;
+        private float originalHeight;
 
         private float m_currentMoveSpeed;
-        private Vector3 m_playerScale;
         private float refVelocity;
 
         private float m_currentPlayerHeight;
         private float ref_crouchVelocity;
+        private Vector3 orginalCameraRoot;
 
-        private float m_currentStamina;
-
-        [HideInInspector] public bool disableCameraMovemenBool = false;
+        private bool enablePlayerMovement = true;
         public enum PlayerState 
         {
             idle,
@@ -84,45 +76,47 @@ namespace EL.Player
             running,
             crouching
         }
+       
         public PlayerState playerState = PlayerState.idle;
 
+        #endregion
+
+        #region HIDE IN INSPECTOR VARIABLES
+
+        [HideInInspector] public float m_currentStamina;
+        [HideInInspector] public float playerInputX , playerInputY;
+
+        #endregion
         //--------------------------------------------------------------------------------------//
-        void Start()
+        private void Start()
         {
             characterController = GetComponent<CharacterController>();
-            m_currentPlayerHeight = m_defaultScale;
 
             originalMoveSpeed = moveSpeed;
             m_currentMoveSpeed = moveSpeed;
 
-            if (instance == null) { instance = this; }
-            else { Destroy(gameObject); }
+            originalCenter = characterController.center;
+            originalHeight = characterController.height;
+            orginalCameraRoot = cameraRoot.localPosition;
 
-            //, SetUp Stamina Value
             m_currentStamina = m_Stamina;
-            m_playerScale = this.transform.localScale;
-
-            playerCamera = GetComponentInChildren<Camera>();
-            Cursor.lockState = CursorLockMode.Locked;
         }
         private void Update()
         {
-            UpdateUI();
-            if(disableCameraMovemenBool) {return;}
-            //HandleCrouch();
-            PlayerStateController();
-            HandleMovement();
+            if(enablePlayerMovement)
+            {
+                PlayerStateController();
+                HandleMovement();
+            }
         }
 
         private void PlayerStateController() 
         {
-            Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
-
-            if (IsIdle)
+            if (IsIdle && !IsCrouching)
             {
                 playerState = PlayerState.idle;
             }
-            else if(IsWalking && !IsRunning)
+            else if(IsWalking && !IsRunning && !IsCrouching)
             {
                 playerState = PlayerState.walking;
             }
@@ -130,37 +124,29 @@ namespace EL.Player
             {
                 playerState = PlayerState.running;
             }
-            else if(IsCrouching)
+            else if(IsCrouching && IsWalking || IsCrouching)
             {
                 playerState = PlayerState.crouching;
             }
         }
-        private void HandleMovement()
+        public void HandleMovement()
         {
             Movement();
             SprintMovement();
             CrouchMovement();
+        }
 
-            bool CanRun() { return m_currentStamina > m_minStamina; }
+        #region Player Movement Handler
 
-            #region Player Movement
-
+            #region  Section : Movement
             void Movement()
             {
-                // Mouse Look
-                float horizontalRotation = Input.GetAxis("Mouse X") * mouseSensitivity;
-                transform.Rotate(0, horizontalRotation, 0);
+            // Player Movement
+                playerInputX = Input.GetAxis("Horizontal") * m_currentMoveSpeed;
+                playerInputY = Input.GetAxis("Vertical") * m_currentMoveSpeed;
 
-                verticalRotation -= Input.GetAxis("Mouse Y") * mouseSensitivity;
-                verticalRotation = Mathf.Clamp(verticalRotation, -90f, 90f);
-                playerCamera.transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
-
-                // Player Movement
-                float moveX = Input.GetAxis("Vertical") * m_currentMoveSpeed;
-                float moveY = Input.GetAxis("Horizontal") * m_currentMoveSpeed;
-
-                Vector2 moveVector = new Vector2(moveX, moveY);
-                Vector3 moveDir = transform.TransformDirection(new Vector3(moveY, 0, moveX));
+                Vector2 moveVector = new Vector2(playerInputX, playerInputY);
+                Vector3 moveDir = transform.TransformDirection(new Vector3(playerInputX, 0, playerInputY));
 
                 if (!characterController.isGrounded)
                 {
@@ -183,18 +169,18 @@ namespace EL.Player
 
             #endregion
 
-            #region Player Sprint Movement
-
+            #region Section : Sprint  
+            bool CanRun() { return m_currentStamina > m_minStamina; }
             void SprintMovement()
             {
-                if(Input.GetKey(runKey) && Input.GetKey(KeyCode.W) && CanRun())
-                {   
+                if (Input.GetKey(runKey) && Input.GetKey(KeyCode.W) && CanRun() && !IsCrouching)
+                {
                     if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)) { return; }
 
                     m_currentMoveSpeed = Mathf.SmoothDamp(m_currentMoveSpeed, sprintSpeed, ref refVelocity, smoothTime);
                     m_currentStamina -= m_StaminaReduce * Time.deltaTime;
                     m_currentStamina = Mathf.Clamp(m_currentStamina, m_minStamina, m_Stamina);
-                    if(m_currentStamina < m_minStamina) { m_currentStamina = m_minStamina; }
+                    if (m_currentStamina < m_minStamina) { m_currentStamina = m_minStamina; }
                     IsRunning = true;
                 }
                 else if (!Input.GetKey(runKey) || !CanRun())
@@ -228,25 +214,28 @@ namespace EL.Player
 
             #endregion
 
-            #region Player Crouch Movement
-            
+            #region Section : Crouch 
             void CrouchMovement()
             {
-                float yScale = Mathf.SmoothDamp(this.transform.localScale.y, IsCrouching ? m_crouchScale : m_defaultScale, ref ref_crouchVelocity, m_crouchSmoothTime);
-                Mathf.Ceil(yScale);
-                this.transform.localScale = new Vector3(this.transform.localScale.x, yScale, this.transform.localScale.z);
+                if (Input.GetKeyDown(crouchKey)) { IsCrouching =! IsCrouching; }
 
-                if (Input.GetKeyDown(crouchKey))
-                { IsCrouching = !IsCrouching; }
+                cameraRoot.localPosition = Vector3.Lerp(cameraRoot.localPosition, IsCrouching ? new Vector3(0f, -0.5f, 0f) : orginalCameraRoot, 4f * Time.deltaTime);
+
+                characterController.height = IsCrouching ? 1f : originalHeight;
+                characterController.center = IsCrouching ? new Vector3(0f, -0.5f, 0f) : originalCenter;
             }
 
-            #endregion
-        }
-    
-        void UpdateUI() 
+        #endregion
+
+        #endregion
+
+        public void SetPlayerMovementActive(bool active)
         {
-            PlayerUIManager.instance.UI_staminaSlider.maxValue = m_Stamina;
-            PlayerUIManager.instance.UI_staminaSlider.value = m_currentStamina;
+            enablePlayerMovement = active;
         }
-    }    
+
+    }   
 }
+
+
+

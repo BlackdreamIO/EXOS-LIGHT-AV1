@@ -163,7 +163,7 @@ public class FlashLight : MonoBehaviour
     }
     void UpdateUI()
     {
-        PlayerUIManager.instance.UI_flashLightChargeSlider.maxValue = maxCharge;
-        PlayerUIManager.instance.UI_flashLightChargeSlider.value = currentCharge;
+        //PlayerUIManager.instance.UI_flashLightChargeSlider.maxValue = maxCharge;
+        //PlayerUIManager.instance.UI_flashLightChargeSlider.value = currentCharge;
     }
 }
