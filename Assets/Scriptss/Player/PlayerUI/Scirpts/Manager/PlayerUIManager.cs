@@ -7,10 +7,15 @@ using TetraCreations.Attributes;
 public class PlayerUIManager : MonoBehaviour
 {   
     public Player player;
+    
+    [Header("Panel")]
+
+    [SerializeField] private GameObject InspectPanel;
+    [SerializeField] private TextMeshProUGUI InspectID;
 
     #region Player Side
-    
-    [SerializeField] private Slider StaminaSlider;
+
+        [SerializeField] private Slider StaminaSlider;
 
     #endregion
 
@@ -27,6 +32,7 @@ public class PlayerUIManager : MonoBehaviour
         {
             StaminaSlider.minValue = player.m_minStamina;
             StaminaSlider.maxValue = player.m_Stamina;
+
         }
     }
     private void Update() 
@@ -34,9 +40,19 @@ public class PlayerUIManager : MonoBehaviour
         StaminaSlider.value = player.m_currentStamina;
     }
 
-    public void PopUpObjectID(string id)
+    public void ShowViewablebject()
     {
         
+    }
+
+    public void ShowInspectPanel(string ID)
+    {
+        InspectPanel.GetComponent<PlayerAnimateUI>().StartAnimation();
+        InspectID.text = ID;
+    }
+    public void HideInspectPanel()
+    {
+        InspectPanel.GetComponent<PlayerAnimateUI>().StopAnimation();
     }
 
     /*

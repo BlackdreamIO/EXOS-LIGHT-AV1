@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InventoryItemObject : MonoBehaviour, IpickUpItem
+public class InventoryItemObject : MonoBehaviour
 {
     public InventoryItem itemData;
 

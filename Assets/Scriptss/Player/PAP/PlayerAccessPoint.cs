@@ -14,6 +14,7 @@ namespace EL.Core.PlayerAcessPointer
         {
             DoMovement,
             DoInteraction,
+            DoHandMovement,
             PopUpObjectID
         }
         public SendRequest sendRequest = SendRequest.DoMovement;
@@ -25,6 +26,7 @@ namespace EL.Core.PlayerAcessPointer
         private Motion motion;
         private HeadBOB headBOB;
         private PlayerUIManager playerUI;
+        private Interactor interactor;
 
         private void Awake() 
         {
@@ -62,6 +64,7 @@ namespace EL.Core.PlayerAcessPointer
             motion = FindComponentInRootOrChildren<Motion>(playerObj);
             headBOB = FindComponentInRootOrChildren<HeadBOB>(playerObj);
             playerUI = FindComponentInRootOrChildren<PlayerUIManager>(playerObj);
+            interactor = FindComponentInRootOrChildren<Interactor>(playerObj);
         }
 
         #region Return Component
@@ -72,6 +75,7 @@ namespace EL.Core.PlayerAcessPointer
         public Motion GetMotionComponent() { return motion; }
         public HeadBOB GetHeadBOBComponent() { return headBOB; }
         public PlayerUIManager GetPlayerUIComponent() { return playerUI; }
+        public Interactor GetPlayerInteractor() { return interactor; }
 
         #endregion
 
@@ -88,6 +92,9 @@ namespace EL.Core.PlayerAcessPointer
                 case SendRequest.PopUpObjectID:
                     //playerUI.PopUpObjectID();
                     break;
+                case SendRequest.DoHandMovement:
+                    DoHandMovement();
+                    break;
                 default:
                     DoMovement();
                     break;
@@ -100,6 +107,7 @@ namespace EL.Core.PlayerAcessPointer
             GetPlayerCameraControllerComponent().SetPlayerCamActive(true);
             GetMotionComponent().SetPlayerMotionActive(true);
             GetHeadBOBComponent().SetHeadBobActivation(true);
+            GetPlayerInteractor().IneractLight.enabled = false;
         }
         private void DoInteraction()
         {
@@ -107,6 +115,11 @@ namespace EL.Core.PlayerAcessPointer
             GetPlayerCameraControllerComponent().SetPlayerCamActive(false);
             GetMotionComponent().SetPlayerMotionActive(false);
             GetHeadBOBComponent().SetHeadBobActivation(false);
+            GetPlayerInteractor().IneractLight.enabled = true;
+        }
+        private void DoHandMovement()
+        {
+            GetPlayerCameraControllerComponent().SetPlayerCamActive(false);
         }
     }
 

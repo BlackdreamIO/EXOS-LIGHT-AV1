@@ -17,10 +17,6 @@ public class PlayerCameraController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
-        //if(instence == null) { instence = this; }
-        //else { Destroy(gameObject); }
-
     }
     private void Update()
     {
@@ -37,7 +33,6 @@ public class PlayerCameraController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
         horizontalRotation = Input.GetAxis("Mouse X") * mouseSensitivity;
         verticalRotation -= Input.GetAxis("Mouse Y") * mouseSensitivity;
         verticalRotation = Mathf.Clamp(verticalRotation, -Roatation_X, Roatation_X);

@@ -25,29 +25,29 @@ MonoBehaviour:
     colorHeaderTitle: {r: 0.078431375, g: 0.078431375, b: 0.078431375, a: 1}
     colorHeaderBackground: {r: 0.9098039, g: 0.9098039, b: 0.9098039, a: 1}
   professionalTheme:
-    colorRowEven: {r: 0.21568628, g: 0.21568628, b: 0.21568628, a: 1}
+    colorRowEven: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 1}
     colorRowOdd: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 1}
-    colorGrid: {r: 0.16078432, g: 0.16078432, b: 0.16078432, a: 1}
-    colorTreeView: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
-    colorLockIcon: {r: 0.7735849, g: 0.748042, b: 0.748042, a: 1}
+    colorGrid: {r: 0, g: 1, b: 0.8916161, a: 1}
+    colorTreeView: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
+    colorLockIcon: {r: 0.77254903, g: 0.7490196, b: 0.7490196, a: 1}
     tagColor: {r: 1, g: 1, b: 1, a: 1}
-    layerColor: {r: 0.7058824, g: 0.7058824, b: 0.7058824, a: 1}
+    layerColor: {r: 1, g: 1, b: 1, a: 1}
     comSelBGColor: {r: 0.1607843, g: 1, b: 0.36190915, a: 0.5529412}
     selectionColor: {r: 0.17254902, g: 0.3647059, b: 0.5294118, a: 1}
     colorHeaderTitle: {r: 0.8235294, g: 0.8235294, b: 0.8235294, a: 1}
-    colorHeaderBackground: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+    colorHeaderBackground: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
   playmodeTheme:
-    colorRowEven: {r: 0.21568628, g: 0.21568628, b: 0.21568628, a: 1}
+    colorRowEven: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 1}
     colorRowOdd: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 1}
-    colorGrid: {r: 0.16078432, g: 0.16078432, b: 0.16078432, a: 1}
-    colorTreeView: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
-    colorLockIcon: {r: 0.7735849, g: 0.748042, b: 0.748042, a: 1}
+    colorGrid: {r: 0, g: 1, b: 0.8916161, a: 1}
+    colorTreeView: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
+    colorLockIcon: {r: 0.77254903, g: 0.7490196, b: 0.7490196, a: 1}
     tagColor: {r: 1, g: 1, b: 1, a: 1}
-    layerColor: {r: 0.7058824, g: 0.7058824, b: 0.7058824, a: 1}
+    layerColor: {r: 1, g: 1, b: 1, a: 1}
     comSelBGColor: {r: 0.1607843, g: 1, b: 0.36190915, a: 0.5529412}
     selectionColor: {r: 0.17254902, g: 0.3647059, b: 0.5294118, a: 1}
     colorHeaderTitle: {r: 0.8235294, g: 0.8235294, b: 0.8235294, a: 1}
-    colorHeaderBackground: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+    colorHeaderBackground: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
   activeHierarchy: 1
   displayCustomObjectIcon: 1
   displayTreeView: 1

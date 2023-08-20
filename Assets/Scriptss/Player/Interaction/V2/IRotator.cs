@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IRotator : MonoBehaviour, IInteractable
+public class IRotator : MonoBehaviour
 {
     [SerializeField] enum RotationMode
     {

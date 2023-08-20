@@ -360,9 +360,9 @@
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Nodes\Math\Round\StepNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Nodes\Input\Lighting\BakedGINode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Nodes\Math\Trigonometry\HyperbolicCosineNode.cs" />
-     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Drawing\Views\PortInputView.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Drawing\Colors\CategoryColors.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Drawing\Controls\ChannelMixerControl.cs" />
+     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Drawing\Views\PortInputView.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Nodes\Math\Round\TruncateNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Drawing\Controls\ChannelEnumControl.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Drawing\Views\Slots\CubemapSlotControlView.cs" />
@@ -472,8 +472,8 @@
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Graphs\PreviewMode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Nodes\Utility\Logic\NandNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Attributes\NeverAllowedByTargetAttribute.cs" />
-     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Legacy\SlotReference0.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Drawing\Inspector\PropertyDrawers\ColorPropertyDrawer.cs" />
+     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Legacy\SlotReference0.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Graphs\IMaterialGraphAsset.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Graphs\Vector1MaterialSlot.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Graphs\GroupData.cs" />
@@ -601,8 +601,8 @@
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Nodes\Artistic\Adjustment\ReplaceColorNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Generation\Data\ConditionalField.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Nodes\Math\Advanced\AbsoluteNode.cs" />
-     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Graphs\Texture2DMaterialSlot.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Nodes\Math\Basic\DivideNode.cs" />
+     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Graphs\Texture2DMaterialSlot.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Util\UvChannel.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Data\Nodes\Math\Vector\SphereMaskNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.7.0\Editor\Drawing\Controls\CubemapControl.cs" />

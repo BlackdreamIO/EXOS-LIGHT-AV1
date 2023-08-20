@@ -36,28 +36,28 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\CodeRewriting\ManualUserDefinedScriptOverridesRewriter.cs" />
-     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\CodeRewriting\NewFieldDeclaration.cs" />
-     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\CodeRewriting\ThisRewriterBase.cs" />
-     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\ScriptGenerationOverrides\ScriptGenerationOverridesManager.cs" />
+     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\DynamicAssemblyCompiler.cs" />
+     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\CodeRewriting\FastScriptReloadCodeRewriterBase.cs" />
      <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\CodeRewriting\HotReloadCompliantRewriter.cs" />
-     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\CodeRewriting\NewFieldsRewriter.cs" />
-     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\CodeRewriting\CreateNewFieldInitMethodRewriter.cs" />
-     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\CodeRewriting\FieldsWalker.cs" />
      <Compile Include="Assets\FastScriptReload\Scripts\Editor\FileWatcherSetupEntry.cs" />
      <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\CodeRewriting\ThisAssignmentRewriter.cs" />
-     <Compile Include="Assets\FastScriptReload\Scripts\Editor\FastScriptReloadWelcomeScreen.cs" />
-     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\DotnetExeCompilator.cs" />
-     <Compile Include="Assets\FastScriptReload\Scripts\Editor\NewFields\NewFieldsRendererDefaultEditorPatch.cs" />
+     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\CodeRewriting\FieldsWalker.cs" />
      <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\DynamicCompilationBase.cs" />
-     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\McsExeDynamicCompilation.cs" />
-     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\CodeRewriting\ThisCallRewriter.cs" />
      <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\CodeRewriting\ConstructorRewriter.cs" />
      <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\PatchMcsArgsGeneration.cs" />
-     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\CodeRewriting\FastScriptReloadCodeRewriterBase.cs" />
-     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\DynamicAssemblyCompiler.cs" />
-     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\CodeRewriting\RoslynUtils.cs" />
+     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\DotnetExeCompilator.cs" />
+     <Compile Include="Assets\FastScriptReload\Scripts\Editor\FastScriptReloadWelcomeScreen.cs" />
      <Compile Include="Assets\FastScriptReload\Scripts\Editor\FastScriptReloadManager.cs" />
+     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\CodeRewriting\ThisRewriterBase.cs" />
+     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\CodeRewriting\NewFieldsRewriter.cs" />
+     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\CodeRewriting\RoslynUtils.cs" />
+     <Compile Include="Assets\FastScriptReload\Scripts\Editor\NewFields\NewFieldsRendererDefaultEditorPatch.cs" />
+     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\ScriptGenerationOverrides\ScriptGenerationOverridesManager.cs" />
+     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\CodeRewriting\CreateNewFieldInitMethodRewriter.cs" />
+     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\CodeRewriting\ManualUserDefinedScriptOverridesRewriter.cs" />
+     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\CodeRewriting\ThisCallRewriter.cs" />
+     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\McsExeDynamicCompilation.cs" />
+     <Compile Include="Assets\FastScriptReload\Scripts\Editor\Compilation\CodeRewriting\NewFieldDeclaration.cs" />
      <None Include="Assets\FastScriptReload\Scripts\Editor\FastScriptReload.Editor.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>D:\Unity\Unity-all\2020.3.22f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

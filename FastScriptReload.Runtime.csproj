@@ -36,12 +36,12 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\FastScriptReload\Scripts\Runtime\DetourCrashHandler.cs" />
-     <Compile Include="Assets\FastScriptReload\Scripts\Runtime\AssemblyChangesLoader.cs" />
-     <Compile Include="Assets\FastScriptReload\Scripts\Runtime\ProjectTypeCache.cs" />
-     <Compile Include="Assets\FastScriptReload\Scripts\Runtime\LoggerScopedInitializer.cs" />
      <Compile Include="Assets\FastScriptReload\Scripts\Runtime\TemporaryNewFieldValues.cs" />
+     <Compile Include="Assets\FastScriptReload\Scripts\Runtime\DetourCrashHandler.cs" />
+     <Compile Include="Assets\FastScriptReload\Scripts\Runtime\ProjectTypeCache.cs" />
+     <Compile Include="Assets\FastScriptReload\Scripts\Runtime\AssemblyChangesLoader.cs" />
      <Compile Include="Assets\FastScriptReload\Scripts\Runtime\AssemblyChangesLoaderResolver.cs" />
+     <Compile Include="Assets\FastScriptReload\Scripts\Runtime\LoggerScopedInitializer.cs" />
      <None Include="Assets\FastScriptReload\Scripts\Runtime\FastScriptReload.Runtime.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>D:\Unity\Unity-all\2020.3.22f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
