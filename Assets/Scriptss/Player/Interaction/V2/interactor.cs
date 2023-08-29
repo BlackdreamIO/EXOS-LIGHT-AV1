@@ -1,6 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityStandardAssets.ImageEffects;
+
+interface Iinteractor
+{
+    void Interact(Vector3 Sendposition);
+}
+
 public class Interactor : MonoBehaviour
 {   
     [SerializeField] PlayerUIManager playerUIManager;
@@ -35,14 +41,9 @@ public class Interactor : MonoBehaviour
     {
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, range))
         {
-            if (hit.collider.TryGetComponent(out InspectorObject inspectorObject))
+            if (hit.collider.TryGetComponent(out Iinteractor iinteractor))
             {
-                Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward, Color.cyan, range);
-                inspectorObject.Inspect(objectInspectTransform);
-            }
-            if(hit.collider.TryGetComponent(out InventoryItemObject inventoryItemObject))
-            {
-                PlayerInventory.Instance.AddItem(inventoryItemObject.itemData);
+                iinteractor.Interact(objectInspectTransform.transform.position);
             }
         }
     }

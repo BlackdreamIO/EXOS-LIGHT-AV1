@@ -164,8 +164,8 @@ GameObject:
   m_Component:
   - component: {fileID: 89405918}
   - component: {fileID: 89405919}
-  - component: {fileID: 89405921}
   - component: {fileID: 89405916}
+  - component: {fileID: 89405915}
   - component: {fileID: 89405917}
   - component: {fileID: 89405922}
   - component: {fileID: 89405920}
@@ -176,6 +176,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &89405915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89405914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e46558c2f364fd0418e26ae93ae0f054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerUIManager: {fileID: 1282783057}
+  depthOfFieldDeprecated: {fileID: 1687258587}
+  playerCamera: {fileID: 1687258585}
+  objectInspectTransform: {fileID: 172510617}
+  InteractKey: 101
+  IneractLight: {fileID: 1404892854}
+  range: 10
+  inspectorsList: []
 --- !u!114 &89405916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,26 +289,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &89405921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 89405914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e46558c2f364fd0418e26ae93ae0f054, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerUIManager: {fileID: 1282783057}
-  depthOfFieldDeprecated: {fileID: 1687258587}
-  playerCamera: {fileID: 1687258585}
-  objectInspectTransform: {fileID: 172510617}
-  InteractKey: 101
-  IneractLight: {fileID: 1404892854}
-  range: 5
-  inspectorsList: []
 --- !u!23 &89405922
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2041,7 +2041,6 @@ GameObject:
   - component: {fileID: 715134227}
   - component: {fileID: 715134226}
   - component: {fileID: 715134225}
-  - component: {fileID: 715134231}
   m_Layer: 7
   m_Name: InspectableObject (1)
   m_TagString: Untagged
@@ -2202,22 +2201,6 @@ MonoBehaviour:
     - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
     - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
     - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
---- !u!54 &715134231
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 715134223}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!1 &734166350
 GameObject:
   m_ObjectHideFlags: 0
@@ -2263,6 +2246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerTag: Player
   sendRequest: 0
+  Doing: 0
 --- !u!1 &752711238
 GameObject:
   m_ObjectHideFlags: 0
@@ -2885,7 +2869,6 @@ GameObject:
   - component: {fileID: 1116531468}
   - component: {fileID: 1116531467}
   - component: {fileID: 1116531466}
-  - component: {fileID: 1116531472}
   m_Layer: 7
   m_Name: InspectableObject
   m_TagString: Untagged
@@ -3046,22 +3029,6 @@ MonoBehaviour:
   BlendDistance: 2
   originalOutlineWidth: 10
   playerTag: Player
---- !u!54 &1116531472
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1116531464}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!1 &1126561767
 GameObject:
   m_ObjectHideFlags: 0

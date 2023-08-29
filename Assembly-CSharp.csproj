@@ -40,9 +40,9 @@
      <Compile Include="Assets\ExosLightDiv\Content\StartScene\Scritps\RadioLightSync.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\ColorCorrectionCurves.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\SepiaTone.cs" />
-     <Compile Include="Assets\Scriptss\Player\Movement\Motion\CameraShake.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\ImageEffects.cs" />
      <Compile Include="Assets\ExosLightDiv\Prototyping\RXR\FP CC V.1\_Scripts\Player\PlayerMovementController.cs" />
+     <Compile Include="Assets\Scriptss\Player\Interaction\V3\V3Inspectable.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\EdgeDetection.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\ContrastEnhance.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\Blur.cs" />
@@ -50,11 +50,13 @@
      <Compile Include="Assets\Scriptss\Player\Movement\Motion\HeadBOBConfigure.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\SunShafts.cs" />
      <Compile Include="Assets\ExosLightDiv\Prototyping\RXR\FP CC V.1\_Scripts\Player\PlayerCameraController.cs" />
+     <Compile Include="Assets\Scriptss\Player\Body\Motion\CameraShake.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\PostEffectsHelper.cs" />
      <Compile Include="Assets\Scriptss\Player\PAP\PlayerAccessPoint.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\DepthOfFieldDeprecated.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\CameraMotionBlur.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\Bloom.cs" />
+     <Compile Include="Assets\Scriptss\Player\Body\Movement\PlayerStamina.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\GlobalFog.cs" />
      <Compile Include="Assets\Scriptss\Player\Movement\RuuningEffect.cs" />
      <Compile Include="Assets\Animation\PlayerAnimateUI.cs" />
@@ -63,16 +65,16 @@
      <Compile Include="Assets\Scriptss\Player\PlayerUI\Scirpts\Manager\PlayerUIManager.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\PostEffectsBase.cs" />
      <Compile Include="Assets\Scriptss\Player\Interaction\V2\IRotator.cs" />
-     <Compile Include="Assets\Scriptss\Player\Movement\PlayerStamina.cs" />
      <Compile Include="Assets\Scriptss\Player\Effects\PostPorcessing\PostEngine.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\Tonemapping.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\ScreenSpaceAmbientObscurance.cs" />
+     <Compile Include="Assets\Scriptss\Player\Interaction\ObjectProperty.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\BloomAndFlares.cs" />
      <Compile Include="Assets\Scriptss\EditorDrawer\EditorPostEngineLabel.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\ScreenOverlay.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\ImageEffectBase.cs" />
-     <Compile Include="Assets\Scriptss\Player\Interaction\V2\Interactor.cs" />
+     <Compile Include="Assets\Scriptss\Player\Interaction\V2\interactor.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\BlurOptimized.cs" />
      <Compile Include="Assets\Scriptss\SimpleCameraController.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\NoiseAndGrain.cs" />
@@ -84,6 +86,7 @@
      <Compile Include="Assets\ImageEffects\Scripts\ScreenSpaceAmbientOcclusion.cs" />
      <Compile Include="Assets\Scriptss\Player\Inventiory\InventoryItemObject.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\Vortex.cs" />
+     <Compile Include="Assets\Animation\FullBodyScript\HandRotation.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\ColorCorrectionLookup.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\Twirl.cs" />
      <Compile Include="Assets\Tetra Attributes\Example\Script\AttributesExample.cs" />
@@ -93,6 +96,7 @@
      <Compile Include="Assets\Scriptss\Player\Movement\Camera\BodyCamHand.cs" />
      <Compile Include="Assets\Scriptss\Player\Effects\Outline\OutlineBlend.cs" />
      <Compile Include="Assets\Scriptss\Player\Inventiory\InventoryItem.cs" />
+     <Compile Include="Assets\Scriptss\Player\Body\Movement\Body\HandRotation.cs" />
      <Compile Include="Assets\Animation\FullBodyScript\BasePlayer.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\TiltShift.cs" />
      <Compile Include="Assets\Scriptss\Player\Effects\PostPorcessing\MultiDamp.cs" />
@@ -110,7 +114,6 @@
      <Compile Include="Assets\ImageEffects\Scripts\ColorCorrectionRamp.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\Triangles.cs" />
      <Compile Include="Assets\Scriptss\Player\Effects\PostPorcessing\ScreenFader.cs" />
-     <Compile Include="Assets\Animation\FullBodyScript\HandRotation.cs" />
      <None Include="Assets\ImageEffects\Shaders\Tonemapper.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\ImageEffects\Shaders\GlobalFog.shader" />

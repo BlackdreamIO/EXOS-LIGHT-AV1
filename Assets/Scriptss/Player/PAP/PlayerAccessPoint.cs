@@ -19,6 +19,14 @@ namespace EL.Core.PlayerAcessPointer
         }
         public SendRequest sendRequest = SendRequest.DoMovement;
 
+        public enum IsDoing 
+        {
+            Movement,
+            Interaction,
+            HandMovement
+        }
+        public IsDoing Doing = IsDoing.Movement;
+
         // Player Vontroller Scirpts
         private Player.Player player;
         private PlayerCameraController playerCameraController;
@@ -90,7 +98,7 @@ namespace EL.Core.PlayerAcessPointer
                     DoInteraction();
                     break;
                 case SendRequest.PopUpObjectID:
-                    //playerUI.PopUpObjectID();
+                    // playerUI.PopUpObjectID();
                     break;
                 case SendRequest.DoHandMovement:
                     DoHandMovement();
