@@ -25,12 +25,9 @@ public class FlashLight : MonoBehaviour
     [SerializeField] private float currentCharge;
 
     [Space] [Header("SWAY SETTING")]
-    [SerializeField] float intensity = 15;
-    [SerializeField] float smooth = 15;
-    [SerializeField] bool useSway = false;
+
     [SerializeField] GameObject flashLightObject;
     [SerializeField] Light flashLight => flashLightObject.GetComponent<Light>();
-    private Quaternion origin_rotation;
 
     // Script Variables
     private bool canUseFlashlight;
@@ -43,7 +40,6 @@ public class FlashLight : MonoBehaviour
 
     void Start()
     {
-        origin_rotation = flashLightObject.transform.localRotation;
         currentCharge = maxCharge;
         canUseFlashlight = true;
         originalIntensity = flashLight.intensity;
@@ -71,9 +67,7 @@ public class FlashLight : MonoBehaviour
                 UpdateFlashlightIntensity(); 
             }
         }
-        UpdateUI();
 
-        if(useSway) { UpdateSway(); }
     }
 
     private bool HasCharge()
@@ -152,18 +146,6 @@ public class FlashLight : MonoBehaviour
     }
     void UpdateSway()
 	{
-        float t_x_mouse = Input.GetAxis("Mouse X");
-        float t_y_mouse = Input.GetAxis("Mouse Y");
-
-        Quaternion t_x_adj = Quaternion.AngleAxis(-intensity * t_x_mouse, Vector3.up);
-        Quaternion t_y_adj = Quaternion.AngleAxis(intensity * t_y_mouse, Vector3.right);
-        Quaternion target_rotation = origin_rotation * t_x_adj * t_y_adj;
-
-        flashLightObject.transform.localRotation = Quaternion.Lerp(flashLightObject.transform.localRotation, target_rotation, Time.deltaTime * smooth);
-    }
-    void UpdateUI()
-    {
-        //PlayerUIManager.instance.UI_flashLightChargeSlider.maxValue = maxCharge;
-        //PlayerUIManager.instance.UI_flashLightChargeSlider.value = currentCharge;
+      
     }
 }

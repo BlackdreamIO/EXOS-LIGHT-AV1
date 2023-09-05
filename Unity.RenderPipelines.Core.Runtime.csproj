@@ -42,8 +42,8 @@
      <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@10.7.0\Runtime\Camera\FreeCamera.cs" />
      <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@10.7.0\Runtime\RenderGraph\RenderGraphPass.cs" />
      <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@10.7.0\Runtime\Common\XRGraphics.cs" />
-     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@10.7.0\Runtime\Utilities\ResourceReloader.cs" />
      <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@10.7.0\Runtime\Debugging\DebugUI.Panel.cs" />
+     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@10.7.0\Runtime\Utilities\ResourceReloader.cs" />
      <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@10.7.0\Runtime\Common\CoreAttributes.cs" />
      <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@10.7.0\Runtime\Debugging\Prefabs\Scripts\DebugUIHandlerVector3.cs" />
      <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@10.7.0\Runtime\Debugging\Prefabs\Scripts\DebugUIHandlerIndirectToggle.cs" />

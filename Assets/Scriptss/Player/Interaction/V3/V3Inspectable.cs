@@ -19,12 +19,12 @@ public class V3Inspectable : MonoBehaviour, Iinteractor
     private bool _canInspect;
     private bool _alreadyCalledPAP = false;
 
-    PlayerAccessPoint playerAccessPoint;
+    private PlayerAccessPoint playerAccessPoint;
     private void Start() 
     {
         _originalPosition = _currentTransform.position;
         _originalRotation = _currentTransform.rotation;
-        playerAccessPoint = FindObjectOfType<PlayerAccessPoint>(); //.. find the PlayerAccessPoint object
+        playerAccessPoint = PlayerAccessPoint.Instance;
     }
 
     private void Update() 
@@ -66,16 +66,19 @@ public class V3Inspectable : MonoBehaviour, Iinteractor
         private void ManagePlayerAction()
         {
             if (playerAccessPoint == null) { return; }
+            Debug.Log($"Found ({playerAccessPoint.name}) : ");
 
-            if (_canInspect && !_alreadyCalledPAP)
+            if (_canInspect)
             {
-                _alreadyCalledPAP = true;
                 playerAccessPoint.sendRequest = PlayerAccessPoint.SendRequest.DoInteraction;
+                playerAccessPoint.UpdatePlayerAction();
+                Debug.Log("DoInteraction");
             }
-            else if (!_canInspect && _alreadyCalledPAP)
+            else if (!_canInspect)
             {
-                _alreadyCalledPAP = false;
                 playerAccessPoint.sendRequest = PlayerAccessPoint.SendRequest.DoMovement;
+                playerAccessPoint.UpdatePlayerAction();
+                Debug.Log("DoMovement");
             }
         }
     #endregion

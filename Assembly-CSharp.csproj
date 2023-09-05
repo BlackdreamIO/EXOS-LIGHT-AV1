@@ -56,9 +56,7 @@
      <Compile Include="Assets\ImageEffects\Scripts\DepthOfFieldDeprecated.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\CameraMotionBlur.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\Bloom.cs" />
-     <Compile Include="Assets\Scriptss\Player\Body\Movement\PlayerStamina.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\GlobalFog.cs" />
-     <Compile Include="Assets\Scriptss\Player\Movement\RuuningEffect.cs" />
      <Compile Include="Assets\Animation\PlayerAnimateUI.cs" />
      <Compile Include="Assets\Scriptss\Player\Movement\Player.cs" />
      <Compile Include="Assets\ExosLightDiv\Content\StartScene\Scritps\AudioWaveformAnalyzer.cs" />
@@ -74,7 +72,7 @@
      <Compile Include="Assets\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\ScreenOverlay.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\ImageEffectBase.cs" />
-     <Compile Include="Assets\Scriptss\Player\Interaction\V2\interactor.cs" />
+     <Compile Include="Assets\Scriptss\Player\Interaction\V2\Interactor.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\BlurOptimized.cs" />
      <Compile Include="Assets\Scriptss\SimpleCameraController.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\NoiseAndGrain.cs" />
@@ -114,6 +112,8 @@
      <Compile Include="Assets\ImageEffects\Scripts\ColorCorrectionRamp.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\Triangles.cs" />
      <Compile Include="Assets\Scriptss\Player\Effects\PostPorcessing\ScreenFader.cs" />
+     <Compile Include="Assets\Scriptss\Player\Movement\Visuals\Heart.cs" />
+     <Compile Include="Assets\Scriptss\Player\Movement\Visuals\PlayerHeart.cs" />
      <None Include="Assets\ImageEffects\Shaders\Tonemapper.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\ImageEffects\Shaders\GlobalFog.shader" />

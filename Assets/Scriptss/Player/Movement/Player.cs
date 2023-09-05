@@ -141,7 +141,7 @@ namespace EL.Core.Player
             #region  Section : Movement
             void Movement()
             {
-            // Player Movement
+                // Player Movement
                 playerInputX = Input.GetAxis("Horizontal") * m_currentMoveSpeed;
                 playerInputY = Input.GetAxis("Vertical") * m_currentMoveSpeed;
 

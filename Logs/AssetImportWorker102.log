@@ -1,0 +1,21 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.22f1 (e1a7f79fd887) revision 14788599'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19044.3086; Version 2009; 64bit' Language: 'en' Physical Memory: 3965 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+D:\Unity\Unity-all\2020.3.22f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker102
+-projectPath
+D:/EXOS LIGHT AV1
+-logFile
+Logs/AssetImportWorker102.log
+-srvPort
+50287
+Successfully changed project path to: D:/EXOS LIGHT AV1
+D:/EXOS LIGHT AV1
+Using Asset Import Pipeline V2.

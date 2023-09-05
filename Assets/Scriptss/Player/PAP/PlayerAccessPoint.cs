@@ -5,8 +5,7 @@ namespace EL.Core.PlayerAcessPointer
 {
     public class PlayerAccessPoint : MonoBehaviour
     {
-        private static PlayerAccessPoint instance;
-        public static PlayerAccessPoint Instance => instance;
+        public static PlayerAccessPoint Instance;
 
         [SerializeField] string PlayerTag;
 
@@ -38,7 +37,7 @@ namespace EL.Core.PlayerAcessPointer
 
         private void Awake() 
         {
-            if (instance == null) { instance = this; }
+            if (Instance == null) { Instance = this; }
             else { Destroy(gameObject); }
         }
         public static T FindComponentInRootOrChildren<T>(GameObject rootObject) where T : Component
@@ -111,23 +110,28 @@ namespace EL.Core.PlayerAcessPointer
 
         private void DoMovement()
         {
-            GetPlayerComponent().SetPlayerMovementActive(true);
-            GetPlayerCameraControllerComponent().SetPlayerCamActive(true);
-            GetMotionComponent().SetPlayerMotionActive(true);
-            GetHeadBOBComponent().SetHeadBobActivation(true);
-            GetPlayerInteractor().IneractLight.enabled = false;
+            player.SetPlayerMovementActive(true);
+            playerCameraController.SetPlayerCamActive(true);
+            motion.SetPlayerMotionActive(true);
+            headBOB.SetHeadBobActivation(true);
+            interactor.IneractLight.enabled = false;
+
+            Doing = IsDoing.Movement;
         }
         private void DoInteraction()
         {
-            GetPlayerComponent().SetPlayerMovementActive(false);
-            GetPlayerCameraControllerComponent().SetPlayerCamActive(false);
-            GetMotionComponent().SetPlayerMotionActive(false);
-            GetHeadBOBComponent().SetHeadBobActivation(false);
-            GetPlayerInteractor().IneractLight.enabled = true;
+            Debug.Log("asshole beinhg");
+            player.SetPlayerMovementActive(false);
+            playerCameraController.SetPlayerCamActive(false);
+            motion.SetPlayerMotionActive(false);
+            headBOB.SetHeadBobActivation(false);
+            interactor.IneractLight.enabled = true;
+
+            Doing = IsDoing.Interaction;
         }
         private void DoHandMovement()
         {
-            GetPlayerCameraControllerComponent().SetPlayerCamActive(false);
+            playerCameraController.SetPlayerCamActive(false);
         }
     }
 
