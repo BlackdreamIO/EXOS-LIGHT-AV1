@@ -120,7 +120,6 @@ namespace EL.Core.PlayerAcessPointer
         }
         private void DoInteraction()
         {
-            Debug.Log("asshole beinhg");
             player.SetPlayerMovementActive(false);
             playerCameraController.SetPlayerCamActive(false);
             motion.SetPlayerMotionActive(false);

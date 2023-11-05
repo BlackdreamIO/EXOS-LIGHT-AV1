@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scriptss\Player\Interaction\ObjectProperty.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\BloomAndFlares.cs" />
      <Compile Include="Assets\Scriptss\EditorDrawer\EditorPostEngineLabel.cs" />
+     <Compile Include="Assets\Scriptss\Player\Movement\Visuals\Heart.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\ScreenOverlay.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\ImageEffectBase.cs" />
@@ -78,6 +79,7 @@
      <Compile Include="Assets\ImageEffects\Scripts\NoiseAndGrain.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\BloomOptimized.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\DepthOfField.cs" />
+     <Compile Include="Assets\Scriptss\Player\Movement\Visuals\PlayerHeart.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\Antialiasing.cs" />
      <Compile Include="Assets\Scriptss\Player\Movement\Motion\HeadBOB.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\NoiseAndScratches.cs" />
@@ -112,8 +114,7 @@
      <Compile Include="Assets\ImageEffects\Scripts\ColorCorrectionRamp.cs" />
      <Compile Include="Assets\ImageEffects\Scripts\Triangles.cs" />
      <Compile Include="Assets\Scriptss\Player\Effects\PostPorcessing\ScreenFader.cs" />
-     <Compile Include="Assets\Scriptss\Player\Movement\Visuals\Heart.cs" />
-     <Compile Include="Assets\Scriptss\Player\Movement\Visuals\PlayerHeart.cs" />
+     <Compile Include="Assets\Scriptss\Player\Movement\Sounds\PlayerSoundManager.cs" />
      <None Include="Assets\ImageEffects\Shaders\Tonemapper.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\ImageEffects\Shaders\GlobalFog.shader" />

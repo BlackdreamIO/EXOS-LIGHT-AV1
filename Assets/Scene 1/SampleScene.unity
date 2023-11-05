@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 89405917}
   - component: {fileID: 89405922}
   - component: {fileID: 89405920}
+  - component: {fileID: 89405923}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -244,7 +245,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89405914}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df5d2039f25d4404ca2dd442bfda721d, type: 3}
   m_Name: 
@@ -356,6 +357,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &89405923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89405914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d52de5e30068ba34f872c8331771ea02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &100057755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1418,7 +1431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &525713843
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2406,7 +2419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &819682561
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3819,7 +3832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!120 &1330463191
 LineRenderer:
   m_ObjectHideFlags: 0
